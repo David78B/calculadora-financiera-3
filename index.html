@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financiera Completa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora Financiera</h1>
+        <p>Utiliza las herramientas financieras para tus cálculos de inversión, préstamo y más.</p>
+    </header>
+
+    <section id="calculadora">
+        <!-- Guía general -->
+        <div id="guia">
+            <h2>Guía de Uso</h2>
+            <p>Cada sección de la calculadora contiene campos que debes completar para obtener el resultado. A continuación, encontrarás las instrucciones específicas para cada cálculo.</p>
+        </div>
+
+        <!-- 1. Interés Simple -->
+        <div class="calculo">
+            <h2>Interés Simple</h2>
+            <p><strong>Descripción:</strong> El interés simple es una forma básica de calcular los intereses sobre una inversión o préstamo. Se basa únicamente en el capital inicial y no tiene en cuenta los intereses acumulados.</p>
+            <div class="inputs">
+                <label for="capitalSimple">Capital Inicial:</label>
+                <input type="number" id="capitalSimple" placeholder="Ingrese el capital">
+
+                <label for="tasaSimple">Tasa de Interés (%):</label>
+                <input type="number" id="tasaSimple" placeholder="Ingrese la tasa de interés">
+
+                <label for="tiempoSimple">Tiempo (años):</label>
+                <input type="number" id="tiempoSimple" placeholder="Ingrese el tiempo en años">
+            </div>
+
+            <div class="guia">
+                <p><strong>Guía:</strong> Para calcular el interés simple, introduce el capital inicial, la tasa de interés anual, y el tiempo en años.</p>
+            </div>
+
+            <button onclick="calcularInteresSimple()">Calcular</button>
+            <p>Resultado: <span id="resultadoInteresSimple"></span></p>
+        </div>
+
+        <!-- 2. Interés Compuesto -->
+        <div class="calculo">
+            <h2>Interés Compuesto</h2>
+            <p><strong>Descripción:</strong> El interés compuesto toma en cuenta los intereses acumulados en cada periodo. Es el método más utilizado en las inversiones a largo plazo ya que permite que el dinero crezca exponencialmente.</p>
+            <div class="inputs">
+                <label for="capitalCompuesto">Capital Inicial:</label>
+                <input type="number" id="capitalCompuesto" placeholder="Ingrese el capital">
+
+                <label for="tasaCompuesto">Tasa de Interés (%):</label>
+                <input type="number" id="tasaCompuesto" placeholder="Ingrese la tasa de interés">
+
+                <label for="tiempoCompuesto">Tiempo (años):</label>
+                <input type="number" id="tiempoCompuesto" placeholder="Ingrese el tiempo en años">
+
+                <label for="periodosCompuesto">N° de Periodos por Año:</label>
+                <input type="number" id="periodosCompuesto" placeholder="Ingrese los periodos por año">
+            </div>
+
+            <div class="guia">
+                <p><strong>Guía:</strong> En este cálculo, además del capital y la tasa de interés, debes introducir los periodos de capitalización por año.</p>
+            </div>
+
+            <button onclick="calcularInteresCompuesto()">Calcular</button>
+            <p>Resultado: <span id="resultadoInteresCompuesto"></span></p>
+        </div>
+
+        <!-- 3. ROI (Rentabilidad sobre Inversión) -->
+        <div class="calculo">
+            <h2>ROI (Rentabilidad sobre Inversión)</h2>
+            <p><strong>Descripción:</strong> El ROI mide la eficiencia de una inversión. Te permite saber cuánta rentabilidad obtuviste en relación al capital invertido, y se expresa como un porcentaje.</p>
+            <div class="inputs">
+                <label for="beneficio">Beneficio:</label>
+                <input type="number" id="beneficio" placeholder="Ingrese el beneficio">
+
+                <label for="inversion">Inversión Inicial:</label>
+                <input type="number" id="inversion" placeholder="Ingrese la inversión inicial">
+            </div>
+
+            <div class="guia">
+                <p><strong>Guía:</strong> Introduce el beneficio total obtenido y la inversión inicial para calcular la rentabilidad porcentual sobre la inversión.</p>
+            </div>
+
+            <button onclick="calcularROI()">Calcular</button>
+            <p>Resultado: <span id="resultadoROI"></span></p>
+        </div>
+
+        <!-- 4. Amortización de Préstamos -->
+        <div class="calculo">
+            <h2>Amortización de Préstamos</h2>
+            <p><strong>Descripción:</strong> La amortización de préstamos te permite conocer el valor de la cuota mensual que tendrás que pagar, en función del capital total, la tasa de interés y el plazo del préstamo.</p>
+            <div class="inputs">
+                <label for="capitalPrestamo">Capital del Préstamo:</label>
+                <input type="number" id="capitalPrestamo" placeholder="Ingrese el capital del préstamo">
+
+                <label for="tasaPrestamo">Tasa de Interés (%):</label>
+                <input type="number" id="tasaPrestamo" placeholder="Ingrese la tasa de interés">
+
+                <label for="plazoPrestamo">Plazo (meses):</label>
+                <input type="number" id="plazoPrestamo" placeholder="Ingrese el plazo en meses">
+            </div>
+
+            <div class="guia">
+                <p><strong>Guía:</strong> Introduce el capital total del préstamo, la tasa de interés anual, y el plazo del préstamo en meses para calcular la cuota mensual.</p>
+            </div>
+
+            <button onclick="calcularAmortizacion()">Calcular</button>
+            <p>Cuota Mensual: <span id="resultadoAmortizacion"></span></p>
+        </div>
+
+        <!-- Aquí seguirían las otras 15 herramientas con su guía y descripción correspondiente -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
